@@ -1,0 +1,145 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>co.jp.axa</groupId>
+	<artifactId>timezone</artifactId>
+	<version>1.0</version>
+	<packaging>war</packaging>
+
+	<!-- properties start -->
+	<properties>
+		<java.version>1.8</java.version>
+		<javax.validation.version>2.0.0.Final</javax.validation.version>
+		<hibernate.vlaidator.version>6.0.2.Final</hibernate.vlaidator.version>
+		<spring.modules.validation.version>0.8</spring.modules.validation.version>
+		<springframework.version>4.3.10.RELEASE</springframework.version>
+		<springframework.security.version>4.2.3.RELEASE</springframework.security.version>
+		<spring.data.jpa.version>1.11.7.RELEASE</spring.data.jpa.version>
+		<hibernate.version>5.2.10.Final</hibernate.version>
+		<jackson.library>2.9.0</jackson.library>
+		<mysql.connector.version>6.0.6</mysql.connector.version>
+		<maven.comlier.plugin.version>3.7.0</maven.comlier.plugin.version>
+		<maven.war.plugin.version>2.6</maven.war.plugin.version>
+	</properties>
+	<!-- properties end -->
+
+	<!-- Dependencies start -->
+
+	<dependencies>
+
+
+		<!-- Spring start -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${springframework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${springframework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${springframework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${springframework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${springframework.version}</version>
+		</dependency>
+		<!-- <dependency> <groupId>org.springframework</groupId> <artifactId>spring-orm</artifactId> 
+			<version>${springframework.version}</version> </dependency> -->
+
+		<!-- Spring Data JPA start -->
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-jpa</artifactId>
+			<version>${spring.data.jpa.version}</version>
+		</dependency>
+		<!-- Spring Data JPA end -->
+
+
+
+		<!-- Spring end -->
+
+		<!-- Hibernate start -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<!-- <dependency> <groupId>org.hibernate</groupId> <artifactId>hibernate-validator</artifactId> 
+			<version>5.1.3.Final</version> </dependency> <dependency> <groupId>org.hibernate.javax.persistence</groupId> 
+			<artifactId>hibernate-jpa-2.0-api</artifactId> <version>1.0.1.Final</version> 
+			</dependency> -->
+		<!-- Servlet start -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.0.1</version>
+		</dependency>
+		<!-- Servlet start -->
+		<!-- JSON to HTTP start -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.library}</version>
+		</dependency>
+		<!-- JSON to HTTP end -->
+		<!-- MySQL start -->
+		<!-- <dependency> <groupId>mysql</groupId> <artifactId>mysql-connector-java</artifactId> 
+			<version>${mysql.connector.version}</version> </dependency> -->
+		<!-- MySQL end -->
+		<!-- Oracle JDBC start -->
+		<!-- https://mvnrepository.com/artifact/oracle/ojdbc6 -->
+		<dependency>
+			<groupId>com</groupId>
+			<artifactId>ojdbc6</artifactId>
+			<version>11</version>
+		</dependency>
+
+		<!-- Oracle JDBC end -->
+	</dependencies>
+
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${maven.comlier.plugin.version}</version>
+					<configuration>
+						<source>${java.version}</source>
+						<target>${java.version}</target>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>${maven.war.plugin.version}</version>
+					<!-- <artifactId>maven-ear-plugin</artifactId> <version>2.10.1</version> -->
+					<configuration>
+						<warSourceDirectory>src/main/webapp</warSourceDirectory>
+						<warName>timezone</warName>
+						<contextRoot>/timezone</contextRoot>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		<finalName>timezone</finalName>
+	</build>
+
+</project>
